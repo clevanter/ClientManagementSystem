@@ -1,0 +1,13 @@
+C:\Users\Aliyah\source\repos\ClientManagementSystem\bin\Debug\netcoreapp3.1\ClientManagementSystem.exe
+C:\Users\Aliyah\source\repos\ClientManagementSystem\bin\Debug\netcoreapp3.1\ClientManagementSystem.deps.json
+C:\Users\Aliyah\source\repos\ClientManagementSystem\bin\Debug\netcoreapp3.1\ClientManagementSystem.runtimeconfig.json
+C:\Users\Aliyah\source\repos\ClientManagementSystem\bin\Debug\netcoreapp3.1\ClientManagementSystem.runtimeconfig.dev.json
+C:\Users\Aliyah\source\repos\ClientManagementSystem\bin\Debug\netcoreapp3.1\ClientManagementSystem.dll
+C:\Users\Aliyah\source\repos\ClientManagementSystem\bin\Debug\netcoreapp3.1\ClientManagementSystem.pdb
+C:\Users\Aliyah\source\repos\ClientManagementSystem\obj\Debug\netcoreapp3.1\ClientManagementSystem.csprojAssemblyReference.cache
+C:\Users\Aliyah\source\repos\ClientManagementSystem\obj\Debug\netcoreapp3.1\ClientManagementSystem.AssemblyInfoInputs.cache
+C:\Users\Aliyah\source\repos\ClientManagementSystem\obj\Debug\netcoreapp3.1\ClientManagementSystem.AssemblyInfo.cs
+C:\Users\Aliyah\source\repos\ClientManagementSystem\obj\Debug\netcoreapp3.1\ClientManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\Aliyah\source\repos\ClientManagementSystem\obj\Debug\netcoreapp3.1\ClientManagementSystem.dll
+C:\Users\Aliyah\source\repos\ClientManagementSystem\obj\Debug\netcoreapp3.1\ClientManagementSystem.pdb
+C:\Users\Aliyah\source\repos\ClientManagementSystem\obj\Debug\netcoreapp3.1\ClientManagementSystem.genruntimeconfig.cache
