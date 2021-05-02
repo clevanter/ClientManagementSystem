@@ -75,11 +75,10 @@ namespace ClientManagementSystem
 
         static void DisplayCalendar()
         {
-            foreach (var date in CalendarDates) //to be read and write in the future
+            for (int i = 0; i < CalendarDates.Count; i++) //to be read and write in the future
             {
-                Console.WriteLine(date);
+                Console.WriteLine(CalendarDates[i]); 
             }
         }
-
     }
 }
