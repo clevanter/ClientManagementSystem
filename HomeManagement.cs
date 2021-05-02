@@ -20,9 +20,9 @@ namespace ClientManagementSystem
                   "LMH — 12345678902\n"};
 
         public static List<string> NewContacts = new List<string>()
-                { "CEW — 12345678903",
-                  "HHJ — 12345678901",
-                  "LMH — 12345678902\n"};
+                { "BC — 12345678904",
+                  "JJK — 12345678905",
+                  "JWY — 12345678902\n"};
 
         public static List<string> CalendarDates = new List<string>()
                 { "1 — Deal with ABC Company", 
@@ -51,7 +51,7 @@ namespace ClientManagementSystem
 
         static void DisplayFeed()
         {
-            for (int i = 0; i < Updates.Count; i++)
+            for (int i = 0; i < Updates.Count; i++) //to be read and write in the future
             {
                 Console.WriteLine(Updates[i]); 
             }
@@ -59,7 +59,7 @@ namespace ClientManagementSystem
 
        static void DisplayLeads()
        {
-            foreach (var lead in NewLeads)
+            foreach (var lead in NewLeads) //read only
             {
                 Console.WriteLine(lead);
             }
@@ -67,15 +67,15 @@ namespace ClientManagementSystem
 
         static void DisplayContacts()
         {
-            for (int i = 0; i < NewContacts.Count; i++)
+            foreach (var contact in NewContacts) //read only
             {
-                Console.WriteLine(NewContacts[i]);
+                Console.WriteLine(lead);
             }
         }
 
         static void DisplayCalendar()
         {
-            foreach (var date in CalendarDates)
+            foreach (var date in CalendarDates) //to be read and write in the future
             {
                 Console.WriteLine(date);
             }
