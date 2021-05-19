@@ -1,0 +1,197 @@
+﻿using System;
+using System.Collections.Generic;
+using CMS.BL;
+
+
+namespace CMS.UI
+{
+    class Program
+    {
+        private static List<string> Managements = new List<string>()
+                    { "To view Home --------------- type H",
+                      "To view Leads -------------- type L",
+                      "To view Contacts ----------- type C",
+                      "To view Accounts ----------- type A",
+                      "To view Deals -------------- type D",
+                      "To view Sales -------------- type S",
+                      "To Exit Application -------- type E"};
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Verimk: Your #1 Client Management Software");
+            DisplayAction();
+            UserOption();  
+
+        }
+        static void DisplayAction()
+        {
+            foreach (var manage in Managements)
+            {
+                Console.WriteLine(manage);
+            }
+            Console.Write("Input: \n");
+        }
+
+        static void UserOption()
+        {
+            string UserChoice = Console.ReadLine().ToUpper();
+
+            switch (UserChoice)
+            {
+                case "H":
+                    Console.WriteLine("Hi");
+                    break;
+
+                case "L":
+                    Console.WriteLine("============= Lead =============");
+                    List<string> LeadOptions = new List<string>()
+                        {"To view existing Leads type 'V'",
+                        "To create a new Lead type 'C'"};
+                    for (int i = 0; i < LeadOptions.Count; i++)
+                    {
+                        Console.WriteLine(LeadOptions[i]);
+                    }
+                    Console.WriteLine("INPUT: ");
+                    UserChoice = Console.ReadLine().ToUpper();
+                    if (UserChoice.Equals("V"))
+                    {
+                        Lead existingLead = new Lead();
+                        existingLead.ViewLead = "Ms. Dana Yoon";
+                        Console.WriteLine(existingLead.ViewLead);
+
+                        existingLead.ViewLead = "Ms. Vela Vogue";
+                        Console.WriteLine(existingLead.ViewLead);
+
+                        Console.WriteLine("To view the contact of Ms. Yoon, type 1");
+                        Console.WriteLine("To view the contact of Ms. Vogue, type 2");
+                        UserChoice = Console.ReadLine().ToUpper();
+
+                        if (UserChoice.Equals("1"))
+                        {
+                            existingLead.CompanyName = "Nylon Manila";
+                            Console.WriteLine("Company Name: " + existingLead.CompanyName );
+                        }
+                    }
+                    else if (UserChoice.Equals("C"))
+                    {
+
+                    }
+                    break;
+
+                case "C":
+                    Console.WriteLine("Hi");
+                    break;
+                case "A":
+                    Console.WriteLine("Hi");
+                    break;
+                case "D":
+                    Console.WriteLine("Hi");
+                    break;
+                case "S":
+                    Console.WriteLine("Hi");
+                    break;
+                case "E":
+                    Console.WriteLine("Hi");
+                    break;
+                default:
+                    DisplayAction();
+                    UserOption();
+                    break;
+
+            }
+        }
+    }
+}
+
+
+//private static List<char> actions = new List<char>()
+//        { 'H', 'L', 'C', 'A', 'I', 'D', 'T', 'S', 'R', 'E' };
+
+
+
+//    Console.WriteLine("Verimk: Your Client Management System\n");
+
+//    for (var UserChoice = GetUserInput();
+//        UserChoice != actions.IndexOf('E');
+//        UserChoice = GetUserInput())
+//    {
+//        if (UserChoice.Equals(actions.IndexOf('H')))
+//        {
+//            // will consist of feed, summary of contacts & interaction tracking, calendar
+//        }
+//        else if (UserChoice.Equals(actions.IndexOf('I')))
+//        {
+//            Console.WriteLine("Inbox: Ongoing :)\n"); // will consist of conversation                   
+//        }
+//        else if (UserChoice.Equals(actions.IndexOf('L')))
+//        {
+
+//        }
+//        else if (UserChoice.Equals(actions.IndexOf('C')))
+//        {
+//            Console.WriteLine("Contacts: Ongoing :)\n");
+//        }
+//        else if (UserChoice.Equals(actions.IndexOf('A')))
+//        {
+//            Console.WriteLine("Accounts: Ongoing\n");
+//        }
+//        else if (UserChoice.Equals(actions.IndexOf('T')))
+//        {
+//            Console.WriteLine("Task: Ongoing\n"); // will consist a task list or to-do list.
+//        }
+//        else if (UserChoice.Equals(actions.IndexOf('R')))
+//        {
+//            Console.WriteLine("Reports: Ongoing\n"); // will consist of reports (sales and etc)
+//        }
+//        else
+//        {
+//            Console.WriteLine("Exiting..");
+//        }
+//    }
+
+//    static void DisplayUserOption()
+//    {
+
+//        foreach (var management in Managements)
+//        {
+//            Console.WriteLine(management);
+//        }
+
+//    }
+
+//    static int GetUserInput()
+//    {
+//        DisplayUserOption();
+//        var UserInput = (Convert.ToChar(Console.ReadLine().ToLower()));
+//        var UserActionIndex = actions.IndexOf(UserInput);
+
+//        if (UserActionIndex != -1)
+//        {
+//            ActionLog(UserInput);
+//            return UserActionIndex;
+//        }
+//        else
+//        {
+//            ActionLog(UserInput);
+//            var message = "Please try again.";
+//            Console.WriteLine(message);
+
+//            return GetUserInput();
+//        }
+//    }
+//}
+
+//static void ActionLog(char action)
+//{
+//    Managements.Equals(actions.IndexOf(action));
+
+//}
+
+//static void ActionLog(string message)
+//{
+//    Console.WriteLine(message);
+//}
+
+
+
+

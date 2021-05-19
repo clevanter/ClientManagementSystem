@@ -1,121 +1,129 @@
 ﻿using System;
 using System.Collections.Generic;
+using CMS.BL;
 
-namespace ClientManagementSystem
+
+namespace CMS.UI
 {
     class Program
     {
-        public static List<string> Managements = new List<string>()
-                { "'H' to view Home",
-                  "'I' to view Inbox",
-                  "'L' to view Leads",
-                  "'C' to view Contacts",
-                  "'A' to view Accounts",
-                  "'T' to view Task",
-                  "'R' to view Reports",
-                  "'E' to exit application\n"};
-
-        public static List<char> actions = new List<char>() 
-                { 'H', 'I', 'L', 'C', 'A', 'T', 'R', 'E' };
+        private static List<string> Managements = new List<string>()
+                    { "To view Home --------------- type H",
+                      "To view Leads -------------- type L",
+                      "To view Contacts ----------- type C",
+                      "To view Accounts ----------- type A",
+                      "To view Deals -------------- type D",
+                      "To view Sales -------------- type S",
+                      "To Exit Application -------- type E\n"};
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Verimk: your number #1 client management software!\n");
-            Console.Write("Home ");
-            Console.Write("Inbox ");
-            Console.Write("Leads ");
-            Console.Write("Contacts ");
-            Console.Write("Accounts ");
-            Console.Write("Task ");
-            Console.WriteLine("Reports\n");
+            UserManagement ToLogin = new UserManagement();
+            Console.WriteLine("Verimk: Your #1 Client Management Software\n");
+            Console.WriteLine("Please LOG-IN\n");
+            ToLogin.username = "Clevanter325";
+            ToLogin.password = "12345678";
+            ToLogin.Admin();
+            DisplayAction();
+            UserOption();  
+        }
 
-            LeadManagement Leads = new LeadManagement();
-            HomeManagement Home = new HomeManagement();
-
-            for (var userChoice = GetUserInput();
-                userChoice != actions.IndexOf('E');
-                userChoice = GetUserInput())
+        static void DisplayAction()
+        {
+            foreach (var manage in Managements)
             {
-                if (userChoice.Equals(actions.IndexOf('H')))
-                {
-                    Home.HomeTab(); // will consist of feed, summary of contacts & interaction tracking, calendar
-                }
-                else if (userChoice.Equals(actions.IndexOf('I')))
-                {
-                    Console.WriteLine("Inbox: Ongoing :)\n"); // will consist of conversation                   
-                }
-                else if (userChoice.Equals(actions.IndexOf('L')))
-                {
-                    Leads.LeadTab();
-                    Console.WriteLine(Leads);
-                }
-                else if (userChoice.Equals(actions.IndexOf('C')))
-                {
-                    Console.WriteLine("Contacts: Ongoing :)\n");
-                }
-                else if (userChoice.Equals(actions.IndexOf('A')))
-                {
-                    Console.WriteLine("Accounts: Ongoing\n");
-                }
-                else if (userChoice.Equals(actions.IndexOf('T')))
-                {
-                    Console.WriteLine("Task: Ongoing\n"); // will consist a task list or to-do list.
-                }
-                else if (userChoice.Equals(actions.IndexOf('R')))
-                {
-                    Console.WriteLine("Reports: Ongoing\n"); // will consist of reports (sales and etc)
-                }
-                else
-                {
-                    Console.WriteLine("Exiting..");
-                }
+                Console.WriteLine(manage);
             }
-
-        static void DisplayUserOption()
-        {
-            Console.WriteLine("Please choose the tab you want to view.\n" +
-                             "Just type a letter then your good to go!\n");
-
-                foreach (var management in Managements)
-                {
-                    Console.WriteLine(management);
-                }
+            Console.Write("INPUT: ");
         }
 
-        static int GetUserInput()
+        static void UserOption()
+        {
+            string UserChoice = Console.ReadLine().ToUpper();
+            Lead existingLead = new Lead();
+            Lead LeadOptions = new Lead();
+            
+
+            switch (UserChoice)
             {
-                DisplayUserOption();
-                var userInput = (Convert.ToChar(Console.ReadLine().ToUpper()));
-                var UserActionIndex = actions.IndexOf(userInput);
+                case "H":
+                    Console.WriteLine("Home");
+                    break;
 
-                if (UserActionIndex != -1)
-                {
-                    ActionLog(userInput);
-                    return UserActionIndex;
-                }
-                else
-                {
-                    ActionLog(userInput);
-                    var message = "Please try again.";
-                    Console.WriteLine(message);
+                case "L":
+                    Console.WriteLine("———————————————— Lead ————————————————\n");
+                    LeadOptions.ViewingLeadOptions();
+                    UserChoice = Console.ReadLine().ToUpper();
 
-                    return GetUserInput();
-                }
+                    if (UserChoice.Equals("V"))
+                    {
+                        existingLead.ViewingExistingLeads();
+                        Console.Write("INPUT: ");
+                        UserChoice = Console.ReadLine().ToUpper();
+
+                        switch (UserChoice)
+                        {
+                            case "1":
+                                Lead FirstLead = new Lead();
+                                FirstLead.firstLead();
+                                break;
+
+                            case "2":
+                                Lead SecondLead= new Lead();
+                                SecondLead.secondLead();
+                                break;
+
+                            default:
+                                existingLead.ViewingExistingLeads();
+                                Console.WriteLine("Input: ");
+                                UserChoice = Console.ReadLine().ToUpper();
+                                break;
+                        }
+
+                    }
+                    else if (UserChoice.Equals("C"))
+                    {
+                        Lead ThirdLead = new Lead();
+                        ThirdLead.thirdLead();
+                    }
+                    else
+                    {
+                        for (int i = 0; i < 5; i++)
+                        {
+                            LeadOptions.ViewingLeadOptions();
+                            Console.WriteLine("Input: ");
+                            UserChoice = Console.ReadLine().ToUpper();
+                            Console.WriteLine("Program is existing");
+                        }
+                    }
+                    break;
+
+                case "C":
+                    Console.WriteLine("———————————————— Contacts ————————————————\n");
+                    break;
+                case "A":
+                    Console.WriteLine("———————————————— Accounts ————————————————\n");
+                    break;
+                case "D":
+                    Console.WriteLine("———————————————— Deals ————————————————\n");
+                    break;
+                case "S":
+                    Console.WriteLine("———————————————— Sales ————————————————\n");
+                    break;
+                case "E":
+                    Console.WriteLine("Bye");
+                    break;
+                default:
+                    DisplayAction();
+                    UserOption();
+                    break;
+
             }
         }
-
-        static void ActionLog(char action)
-        {
-            Managements.Equals(actions.IndexOf(action));
-        }
-
-        static void ActionLog(string message)
-        {
-            Console.WriteLine(message);
-        }   
     }
-}     
+}
 
-        
+
+
 
 
