@@ -1,0 +1,12 @@
+C:\Users\Aliyah\source\repos\CMS.BL\bin\Debug\net5.0\CMS.BL.deps.json
+C:\Users\Aliyah\source\repos\CMS.BL\bin\Debug\net5.0\CMS.BL.dll
+C:\Users\Aliyah\source\repos\CMS.BL\bin\Debug\net5.0\ref\CMS.BL.dll
+C:\Users\Aliyah\source\repos\CMS.BL\bin\Debug\net5.0\CMS.BL.pdb
+C:\Users\Aliyah\source\repos\CMS.BL\obj\Debug\net5.0\CMS.BL.csprojAssemblyReference.cache
+C:\Users\Aliyah\source\repos\CMS.BL\obj\Debug\net5.0\CMS.BL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aliyah\source\repos\CMS.BL\obj\Debug\net5.0\CMS.BL.AssemblyInfoInputs.cache
+C:\Users\Aliyah\source\repos\CMS.BL\obj\Debug\net5.0\CMS.BL.AssemblyInfo.cs
+C:\Users\Aliyah\source\repos\CMS.BL\obj\Debug\net5.0\CMS.BL.csproj.CoreCompileInputs.cache
+C:\Users\Aliyah\source\repos\CMS.BL\obj\Debug\net5.0\CMS.BL.dll
+C:\Users\Aliyah\source\repos\CMS.BL\obj\Debug\net5.0\ref\CMS.BL.dll
+C:\Users\Aliyah\source\repos\CMS.BL\obj\Debug\net5.0\CMS.BL.pdb
