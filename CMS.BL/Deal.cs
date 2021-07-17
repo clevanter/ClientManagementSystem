@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CMS.BL
 {
-    class Deal
+    public class Deal 
     {
+        
     }
 }
